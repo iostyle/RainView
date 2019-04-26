@@ -51,6 +51,8 @@ public class RainView extends View {
     private boolean isOnce;
     private boolean isTrans;
     private boolean isRotate;
+    private float startTransPercent = 0;
+    private float transStatusPercent = 0;
 
     public RainView(Context context) {
         this(context, null);
@@ -90,8 +92,10 @@ public class RainView extends View {
         isOnce = once;
     }
 
-    public void setTrans(boolean trans) {
+    public void setTrans(boolean trans, float f1, float f2) {
         isTrans = trans;
+        startTransPercent = f1;
+        transStatusPercent = f2;
     }
 
     public void setRotate(boolean rotate) {
@@ -305,6 +309,7 @@ public class RainView extends View {
                 .setOnce(isOnce)
                 .setTrans(isTrans)
                 .setRotate(isRotate)
+                .setTransHeight(startTransPercent, transStatusPercent)
                 .build();
         addFallObject(fallObject, maxNum);
     }

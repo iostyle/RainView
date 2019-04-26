@@ -10,7 +10,7 @@
         android:id="@+id/rainView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        app:auto_play="true"
+        app:auto_play="false"
         app:change_wind="true"
         app:item_drawable="@mipmap/ic_launcher_round"
         app:item_height="10dp"

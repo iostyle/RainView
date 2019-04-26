@@ -58,6 +58,21 @@ public class FallObject {
         this.parentWidth = parentWidth;
         this.parentHeight = parentHeight;
 
+        this.builder = builder;
+        isSpeedRandom = builder.isSpeedRandom;
+        isSizeRandom = builder.isSizeRandom;
+        isWindRandom = builder.isWindRandom;
+        isWindChange = builder.isWindChange;
+        isRotate = builder.isRotate;
+        isTrans = builder.isTrans;
+        isOnce = builder.isOnce;
+
+        initWindLevel = builder.initWindLevel;
+        initSpeed = builder.initSpeed;
+
+        startTransPercent = builder.startTransPercent;
+        transStatusPercent = builder.transStatusPercent;
+
         startTransHeight = (int) (this.parentHeight * startTransPercent);
         transStatusHeight = (int) (this.parentHeight * transStatusPercent);
 
@@ -70,17 +85,7 @@ public class FallObject {
             vPaint = new Paint();
         }
 
-        this.builder = builder;
-        isSpeedRandom = builder.isSpeedRandom;
-        isSizeRandom = builder.isSizeRandom;
-        isWindRandom = builder.isWindRandom;
-        isWindChange = builder.isWindChange;
-        isRotate = builder.isRotate;
-        isTrans = builder.isTrans;
-        isOnce = builder.isOnce;
 
-        initWindLevel = builder.initWindLevel;
-        initSpeed = builder.initSpeed;
         randomSpeed();
         randomSize();
         randomWind();
@@ -113,6 +118,9 @@ public class FallObject {
         private boolean isTrans;
         private boolean isOnce;
 
+        private float startTransPercent;
+        private float transStatusPercent;
+
         public Builder(Object o) {
             if (o instanceof Drawable) {
                 this.bitmap = drawableToBitmap((Drawable) o);
@@ -143,6 +151,9 @@ public class FallObject {
             this.isRotate = false;
             this.isTrans = false;
             this.isOnce = false;
+
+            this.startTransPercent = 0.7f;
+            this.transStatusPercent = 0.2f;
         }
 
         public Builder setOnce(boolean isOnce) {
@@ -157,6 +168,20 @@ public class FallObject {
 
         public Builder setTrans(boolean isTrans) {
             this.isTrans = isTrans;
+            return this;
+        }
+
+        /**
+         * 设置透明消失位置
+         *
+         * @param f1 从屏幕的某个高度开始消失
+         * @param f2 消失过程高度
+         */
+        public Builder setTransHeight(float f1, float f2) {
+            if (f1 != 0 && f2 != 0) {
+                this.startTransPercent = f1;
+                this.transStatusPercent = f2;
+            }
             return this;
         }
 
