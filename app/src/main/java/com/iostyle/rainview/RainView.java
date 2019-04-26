@@ -1,21 +1,21 @@
-package com.iostyle.library;
+package com.iostyle.rainview;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
-import android.app.Activity;
+import android.graphics.Rect;
 import android.graphics.drawable.Drawable;
 import android.support.annotation.Nullable;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
-import android.graphics.Rect;
 import android.view.WindowManager;
 
-import com.iostyle.library.listener.ClickListener;
-import com.iostyle.library.listener.FinishListener;
+import com.iostyle.rainview.listener.ClickListener;
+import com.iostyle.rainview.listener.FinishListener;
 
 import java.util.ArrayList;
 import java.util.List;

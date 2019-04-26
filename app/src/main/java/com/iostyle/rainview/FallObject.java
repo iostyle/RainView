@@ -1,4 +1,4 @@
-package com.iostyle.library;
+package com.iostyle.rainview;
 
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
