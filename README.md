@@ -1,4 +1,4 @@
-# RainView
+# RainView [![](https://jitpack.io/v/iostyle/RainView.svg)](https://jitpack.io/#iostyle/RainView)
 
 | Attrs | Format | description |
 |:-:|:-:|:-:|
