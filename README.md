@@ -46,4 +46,8 @@ public Builder setTrans(boolean isTrans, float f1, float f2);
   * @param maxScale     最大倍率
   */
 public Builder setRandomSize(boolean isRandomSize, float minScale, float maxScale);
+```
+
+## demo
+![](https://github.com/iostyle/ImageRepo/blob/master/RainViewDemo.gif) 
         
