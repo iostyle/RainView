@@ -223,7 +223,6 @@ public class FallObject {
          * @param isRandomSize 是否随机
          * @param minScale     最小倍率
          * @param maxScale     最大倍率
-         * @return
          */
         public Builder setRandomSize(boolean isRandomSize, float minScale, float maxScale) {
             this.isSizeRandom = isRandomSize;
@@ -240,7 +239,6 @@ public class FallObject {
          * @param level        风力等级（绝对值为 5 时效果会比较好），为正时风从左向右吹（物体向X轴正方向偏移），为负时则相反
          * @param isWindRandom 物体初始风向和风力大小比例是否随机
          * @param isWindChange 在物体下落过程中风的风向和风力是否会产生随机变化
-         * @return
          */
         public Builder setWind(int level, boolean isWindRandom, boolean isWindChange) {
             this.initWindLevel = level;
