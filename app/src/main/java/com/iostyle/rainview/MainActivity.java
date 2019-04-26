@@ -14,8 +14,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         rainView = findViewById(R.id.rainView);
-//        rainView.setTrans(true, 0.3f, 0.2f);
-//        rainView.setRandomSize(true,0.8f,1.5f);
+        rainView.setTrans(true, 0.7f, 0.2f);
+        rainView.setRandomSize(true,0.8f,1.1f);
         rainView.play();
 //        rainView.setDebug(true);
     }
