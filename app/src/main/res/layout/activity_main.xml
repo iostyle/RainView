@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <com.iostyle.library.RainView
+        android:id="@+id/rainView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:auto_play="true"
+        app:item_drawable="@mipmap/ic_launcher_round"
+        app:item_height="10dp"
+        app:item_width="10dp"
+        app:max_num="500"
+        app:random_wind="true"
+        app:change_wind="true"
+        app:random_speed="true"
+        app:random_size="true" />
+
+</android.support.constraint.ConstraintLayout>
