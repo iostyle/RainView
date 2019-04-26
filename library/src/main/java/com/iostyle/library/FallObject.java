@@ -6,6 +6,7 @@ import android.graphics.Matrix;
 import android.graphics.Paint;
 import android.graphics.PixelFormat;
 import android.graphics.drawable.Drawable;
+import android.util.Log;
 
 import java.util.Random;
 
@@ -23,6 +24,8 @@ public class FallObject {
 
     private float startTransPercent = 0.7f;//开始透明高度屏幕百分比
     private float transStatusPercent = 0.2f;//透明过程屏幕百分比
+    private float minScale;
+    private float maxScale;
 
     public int initSpeed;//初始下降速度
     public int initWindLevel;//初始风力等级
@@ -72,6 +75,8 @@ public class FallObject {
 
         startTransPercent = builder.startTransPercent;
         transStatusPercent = builder.transStatusPercent;
+        minScale = builder.minScale;
+        maxScale = builder.maxScale;
 
         startTransHeight = (int) (this.parentHeight * startTransPercent);
         transStatusHeight = (int) (this.parentHeight * transStatusPercent);
@@ -120,6 +125,8 @@ public class FallObject {
 
         private float startTransPercent;
         private float transStatusPercent;
+        private float minScale;
+        private float maxScale;
 
         public Builder(Object o) {
             if (o instanceof Drawable) {
@@ -154,6 +161,8 @@ public class FallObject {
 
             this.startTransPercent = 0.7f;
             this.transStatusPercent = 0.2f;
+            this.minScale = 0.5f;
+            this.maxScale = 1.5f;
         }
 
         public Builder setOnce(boolean isOnce) {
@@ -201,19 +210,27 @@ public class FallObject {
         /**
          * 设置物体大小
          *
-         * @param w
-         * @param h
-         * @param isRandomSize 物体初始大小比例是否随机
          * @return
          */
-        public Builder setSize(int w, int h, boolean isRandomSize) {
+        public Builder setSize(int w, int h) {
             this.bitmap = changeBitmapSize(this.bitmap, w, h);
-            this.isSizeRandom = isRandomSize;
             return this;
         }
 
-        public Builder setRandomSize() {
-            this.isSizeRandom = true;
+        /**
+         * 设置物体大小随机
+         *
+         * @param isRandomSize 是否随机
+         * @param minScale     最小倍率
+         * @param maxScale     最大倍率
+         * @return
+         */
+        public Builder setRandomSize(boolean isRandomSize, float minScale, float maxScale) {
+            this.isSizeRandom = isRandomSize;
+            if (minScale > 0 && maxScale > 0 && maxScale > minScale) {
+                this.minScale = minScale;
+                this.maxScale = maxScale;
+            }
             return this;
         }
 
@@ -354,7 +371,9 @@ public class FallObject {
      */
     private void randomSize() {
         if (isSizeRandom) {
-            float r = (random.nextInt(3)) * 0.1f + 1f;
+            float r = (random.nextInt(11) * 0.1f * maxScale);
+            if (r < minScale) r = minScale;
+            Log.e("RainView", r + "");
             float rW = r * builder.bitmap.getWidth();
             float rH = r * builder.bitmap.getHeight();
             bitmap = changeBitmapSize(builder.bitmap, (int) rW, (int) rH);

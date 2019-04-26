@@ -13,14 +13,14 @@
         app:auto_play="false"
         app:change_wind="true"
         app:item_drawable="@mipmap/ic_launcher_round"
-        app:item_height="10dp"
-        app:item_width="10dp"
-        app:max_num="500"
+        app:item_height="50dp"
+        app:item_width="50dp"
+        app:max_num="100"
         app:once="false"
-        app:random_size="true"
         app:random_speed="true"
         app:random_wind="true"
         app:rotate="true"
-        app:trans="true" />
+        app:trans="false"
+        app:wind="15" />
 
 </android.support.constraint.ConstraintLayout>

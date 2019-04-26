@@ -53,6 +53,8 @@ public class RainView extends View {
     private boolean isRotate;
     private float startTransPercent = 0;
     private float transStatusPercent = 0;
+    private float minScale;
+    private float maxScale;
 
     public RainView(Context context) {
         this(context, null);
@@ -96,6 +98,12 @@ public class RainView extends View {
         isTrans = trans;
         startTransPercent = f1;
         transStatusPercent = f2;
+    }
+
+    public void setRandomSize(boolean isRandomSize, float f1, float f2) {
+        this.isRandomSize = isRandomSize;
+        minScale = f1;
+        maxScale = f2;
     }
 
     public void setRotate(boolean rotate) {
@@ -144,10 +152,6 @@ public class RainView extends View {
 
     public void setAutoPlay(boolean autoPlay) {
         isAutoPlay = autoPlay;
-    }
-
-    public void setRandomSize(boolean randomSize) {
-        isRandomSize = randomSize;
     }
 
     public RainView setClickListener(final ClickListener listener) {
@@ -305,7 +309,8 @@ public class RainView extends View {
         FallObject fallObject = builder
                 .setSpeed(speed, isRandomSpeed)
                 .setWind(wind, isRandomWind, isChangeWind)
-                .setSize(itemWidth, itemHeight, isRandomSize)
+                .setSize(itemWidth, itemHeight)
+                .setRandomSize(isRandomSize, minScale, maxScale)
                 .setOnce(isOnce)
                 .setTrans(isTrans)
                 .setRotate(isRotate)
