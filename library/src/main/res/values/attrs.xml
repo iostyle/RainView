@@ -12,5 +12,8 @@
         <attr name="random_speed" format="boolean" />
         <attr name="random_wind" format="boolean" />
         <attr name="change_wind" format="boolean" />
+        <attr name="once" format="boolean" />
+        <attr name="trans" format="boolean" />
+        <attr name="rotate" format="boolean" />
     </declare-styleable>
 </resources>

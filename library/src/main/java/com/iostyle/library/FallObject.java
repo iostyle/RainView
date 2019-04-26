@@ -145,22 +145,10 @@ public class FallObject {
             this.isOnce = false;
         }
 
-        public Builder setOnce() {
-            this.isOnce = true;
+        public Builder setOnce(boolean isOnce) {
+            this.isOnce = isOnce;
             return this;
         }
-
-        /**
-         * 设置物体的初始下落速度
-         *
-         * @param speed
-         * @return
-         */
-        public Builder setSpeed(int speed) {
-            this.initSpeed = speed;
-            return this;
-        }
-
 
         public Builder setRotate(boolean isRotate) {
             this.isRotate = isRotate;
@@ -182,18 +170,6 @@ public class FallObject {
         public Builder setSpeed(int speed, boolean isRandomSpeed) {
             this.initSpeed = speed;
             this.isSpeedRandom = isRandomSpeed;
-            return this;
-        }
-
-        /**
-         * 设置物体大小
-         *
-         * @param w
-         * @param h
-         * @return
-         */
-        public Builder setSize(int w, int h) {
-            this.bitmap = changeBitmapSize(this.bitmap, w, h);
             return this;
         }
 

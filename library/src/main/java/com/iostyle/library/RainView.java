@@ -48,6 +48,9 @@ public class RainView extends View {
     private boolean isRandomSpeed;
     private boolean isRandomWind;
     private boolean isChangeWind;
+    private boolean isOnce;
+    private boolean isTrans;
+    private boolean isRotate;
 
     public RainView(Context context) {
         this(context, null);
@@ -76,7 +79,23 @@ public class RainView extends View {
         isRandomSpeed = typedArray.getBoolean(R.styleable.RainView_random_speed, false);
         isRandomWind = typedArray.getBoolean(R.styleable.RainView_random_wind, false);
         isChangeWind = typedArray.getBoolean(R.styleable.RainView_change_wind, false);
+        isOnce = typedArray.getBoolean(R.styleable.RainView_once, false);
+        isTrans = typedArray.getBoolean(R.styleable.RainView_trans, false);
+        isRotate = typedArray.getBoolean(R.styleable.RainView_rotate, false);
+
         if (isAutoPlay && drawable != null) play(drawable);
+    }
+
+    public void setOnce(boolean once) {
+        isOnce = once;
+    }
+
+    public void setTrans(boolean trans) {
+        isTrans = trans;
+    }
+
+    public void setRotate(boolean rotate) {
+        isRotate = rotate;
     }
 
     public void setSpeed(int speed) {
@@ -283,6 +302,9 @@ public class RainView extends View {
                 .setSpeed(speed, isRandomSpeed)
                 .setWind(wind, isRandomWind, isChangeWind)
                 .setSize(itemWidth, itemHeight, isRandomSize)
+                .setOnce(isOnce)
+                .setTrans(isTrans)
+                .setRotate(isRotate)
                 .build();
         addFallObject(fallObject, maxNum);
     }
