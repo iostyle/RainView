@@ -76,3 +76,8 @@ public Builder setRandomSize(boolean isRandomSize, float minScale, float maxScal
 ## demo
 ![](https://github.com/iostyle/ImageRepo/blob/master/RainViewDemo.gif) 
         
+---
+
+## You Can Do More
+![](https://github.com/iostyle/ImageRepo/blob/master/AttireDemo.gif) 
+![](https://github.com/iostyle/ImageRepo/blob/master/RedRainDemo.gif)
