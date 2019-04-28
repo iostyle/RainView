@@ -1,5 +1,30 @@
 # RainView [![](https://jitpack.io/v/iostyle/RainView.svg)](https://jitpack.io/#iostyle/RainView)
 
+## How to
+To get a Git project into your build:
+
+Step 1. Add the JitPack repository to your build file
+
+Add it in your root build.gradle at the end of repositories:
+```
+	allprojects {
+		repositories {
+			...
+			maven { url 'https://jitpack.io' }
+		}
+	}
+```
+Step 2. Add the dependency
+```
+	dependencies {
+	        implementation 'com.github.iostyle:RainView:1.6'
+	}
+```
+
+---
+
+## 使用帮助
+
 | Attrs | Format | description |
 |:-:|:-:|:-:|
 |auto_play|boolean|自动播放|
@@ -51,3 +76,8 @@ public Builder setRandomSize(boolean isRandomSize, float minScale, float maxScal
 ## demo
 ![](https://github.com/iostyle/ImageRepo/blob/master/RainViewDemo.gif) 
         
+---
+
+## You Can Do More
+![](https://github.com/iostyle/ImageRepo/blob/master/AttireDemo.gif) 
+![](https://github.com/iostyle/ImageRepo/blob/master/RedRainDemo.gif)
