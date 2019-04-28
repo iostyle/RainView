@@ -4,14 +4,14 @@ group='com.github.iostyle'
 
 android {
     compileSdkVersion 28
-    defaultConfig {
+//    defaultConfig {
 //        applicationId "com.iostyle.rainview"
-        minSdkVersion 17
-        targetSdkVersion 28
-        versionCode 1
-        versionName "1.0"
-        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
-    }
+//        minSdkVersion 17
+//        targetSdkVersion 28
+//        versionCode 1
+//        versionName "1.0"
+//        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+//    }
     buildTypes {
         release {
             minifyEnabled false
