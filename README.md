@@ -36,7 +36,7 @@ Step 2. Add the dependency
 |speed|integer|下落速度|
 |wind|integer|风速|
 |random_speed|boolean|是否随机速度|
-|random_wind|boolean|是否随机速度|
+|random_wind|boolean|是否随机风速|
 |change_wind|boolean|风向是否改变|
 |once|boolean|是否只执行一次|
 |trans|boolean|是否开启透明度动画|
