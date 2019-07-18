@@ -1,6 +1,6 @@
 # RainView [![](https://jitpack.io/v/iostyle/RainView.svg)](https://jitpack.io/#iostyle/RainView)
 
-## How to
+## Install
 To get a Git project into your build:
 
 Step 1. Add the JitPack repository to your build file
